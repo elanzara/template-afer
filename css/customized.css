@@ -1,0 +1,58 @@
+.disabled-link,
+.disabled-link:visited ,
+.disabled-link:active,
+.disabled-link:hover {
+    /* background-color:#d9d9d9 !important; */
+    color:#d9d9d9   !important;
+}
+
+select {
+    width: 300px;
+}
+
+select:disabled {
+    background-color: lightgray;
+}
+
+.moneda {}
+.exchange {}
+
+.editar {
+	width:24px;
+	height:24px;
+	background-image:url(../img/edit.jpg);
+	background-repeat:no-repeat;
+}
+
+.editar:hover {
+	background-image:url(../img/edith.jpg);
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+
+.divScroll, .divSrollX, .divScrollY {
+	.col-md-6;
+	overflow-x: scroll;
+	width:1110px;
+	height: 300px;
+	padding: 10px;
+	margin-left:5px;
+}
+
+.divScrollX {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.divScrollY {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.moneda {
+    text-align: right;
+}
+
+
+/*tabla de globales venta y detalles venta*/

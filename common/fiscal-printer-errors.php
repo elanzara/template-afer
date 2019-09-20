@@ -1,0 +1,1 @@
+<div id="fiscal_printer_errors"></div>

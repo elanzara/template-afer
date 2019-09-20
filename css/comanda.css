@@ -1,0 +1,293 @@
+@font-face {
+    font-family: 'i20f5';
+    src: url('/frontends/facturas/fonts/i25.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@page {
+  size: A4;
+  margin:5mm;
+}*/
+@media print
+{
+  .noprint{
+    display: none;
+  }
+}
+@media print,screen {
+  *
+  {
+    cursor: default;
+     -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-print-color-adjust:exact;
+    -moz-print-color-adjust:exact;
+    -print-color-adjust:exact;
+  }
+
+  .recibo2 .precio
+  {
+    display: none;
+  }
+  html, body {
+    width: 58mm;
+    margin:0.5mm !important;
+   }
+
+  body{
+    position: relative;
+    font-family : monospace;
+  }
+i.fa
+{
+  margin-right: 5px;
+}
+ #cabecera h2 i.fa
+ {
+  color: #777;
+ }
+ #cabecera h2
+ {
+  font-size: 12px;
+  margin: 5px 0 0;
+  text-align: center;
+ }
+ #cabecera h3
+ {
+  font-size:16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0;
+ }
+ #cabecera h1
+ {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0 0;
+ }
+
+#cabecera #datos_comprobante h2
+{
+  text-align: center;
+}
+#cabecera #letra_comprobante
+{
+    font-size: 50px;
+  background-color: #CCC;
+  color: #000;
+  width: 6%;
+}
+ #cabecera #codigo_comprobante
+ {
+  font-size: 13px;
+  background-color: #FFF;
+  padding-top:5px; 
+  color: #000;
+  width: 100%;
+ }
+ #cabecera #codigo_comprobante,  #cabecera #letra_comprobante
+ {
+  float:left;
+  text-align: center;
+ }
+
+
+ #cabecera #datos_emisor, #cabecera #datos_comprobante
+ {
+  width: 47%;
+  float: left;
+ }
+
+ #cabecera
+ {
+ }
+div.column.w35
+{
+  width: 45%;
+}
+div.column.w65
+{
+  width: 55%;
+}
+div.column
+{
+  float: left;
+}
+ div.clr
+ {
+  clear: both;
+ }
+
+ #datos_receptor h2, #condicion_venta h2
+ {
+  font-size:14px;
+  font-weight: normal;
+  padding: 1px 0;
+ }
+ #datos_receptor
+ {
+  padding: 5px 2px;
+  border-bottom: 1px solid black;
+ }
+  #condicion_venta
+ {
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 1px solid black;
+ }
+
+ table
+ {
+  width: 100%;
+font-size: 11px;
+ }
+
+ table thead tr, table tfoot tr
+ {
+  background-color: #CCC;
+ }
+
+
+table tbody td{
+  text-align: center;
+   padding: 3px 0;
+}
+table+table
+{
+  margin-top: 10px;
+}
+ table thead td, table tfoot td
+ {
+  text-align: center;
+  color: #000;
+    padding: 5px 0;
+ }
+
+ td small
+ {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-variant: small-caps;
+ }
+ .textLeft
+ {
+  text-align: left !important;
+ }
+
+ table tbody tr
+ {
+  border-bottom: 1px solid #ccc;
+ }
+
+ h1.codigo_barras
+ {
+  font-family: "i20f5";
+  font-size: 50px;
+ }
+
+table#totales
+{
+
+}
+
+
+div#totales_wrapper
+{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+}
+div#datos_cae, div#observaciones
+{
+  text-align: center;
+  margin: 5px 0;
+}
+
+div#observaciones
+{
+  padding: 5px 0;
+  background-color: #CCC;
+  color: #000;
+  margin-bottom: 0 !important;
+}
+div#datos_cae
+{
+    font-size: 12px;
+  font-weight: normal;
+}
+div#datos_cae h2
+{
+  margin:3px 0;
+}
+
+.duplicado, .triplicado, .cuatriplicado
+{
+  margin-top:10mm;
+}
+.original, .duplicado, .triplicado, .cuatriplicado
+{
+   width: 58mm;
+   position: relative;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  position: relative;
+    text-decoration: none;
+    top: 15px;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+  cursor: pointer;
+}
+}
+
+@media screen
+{
+  .noprint
+  {
+    height: 50px;
+  }
+}
+
+@media print
+{
+  body
+  {
+  }
+}
+
+.warning
+{
+  background: #c00;
+  color: #FFF;
+  text-align: center;
+  padding: 3px 0;
+  font-weight: bold;
+}
