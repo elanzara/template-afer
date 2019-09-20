@@ -5,8 +5,6 @@ $usuarios = DB::query("SELECT sys_usuarios.username,sys_usuarios.enabled, sys_us
 
 ?>
   <h1 class="page-header">Administración de usuarios
-
-
   </h1>
 
 <div class="form panel panel-success hidden">
