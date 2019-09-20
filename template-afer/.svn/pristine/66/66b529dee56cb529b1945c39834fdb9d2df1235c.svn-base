@@ -1,0 +1,53 @@
+Options FollowSymLinks 
+Options -Indexes
+#php_value display_errors 1
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^buscar/(.*)/$ libs/php/common/buscar.php?tipo=$1 [QSA,NC,L]
+RewriteRule ^recursos/fonts/(.*)$ fonts/$1 [NC,L]
+RewriteRule ^recursos/css/(.*)$ css/$1 [NC,L]
+RewriteRule ^recursos/img/(.*)$ img/$1 [NC,L]
+RewriteRule ^recursos/php/(.*)$ libs/php/$1 [NC,L]
+RewriteRule ^recursos/php/(.*)/(.*)/$ libs/php/$1/$2.php [NC,L]
+RewriteRule ^recursos/js/(.*)$  libs/js/$1 [NC,L]
+
+RewriteRule ^proveedores/cuenta-corriente/(.*)/orden-de-pago/(.*)/$ /frontends/helpers/orden-de-pago.php?id_orden=$2&id_proveedor=$1 [QSA,NC,L]
+RewriteRule ^clientes/cuenta-corriente/(.*)/recibo-de-cobro/(.*)/$ /frontends/helpers/recibo-de-cobro.php?id_orden=$2&id_cliente=$1 [QSA,NC,L]
+
+RewriteRule ^listados/cierre-de-turnos/comentarios/(.*)/$ dashboard.php?modulo=cierre-de-turno/comentarios&parent=listados/cierre-de-turnos&id=$1 [QSA,NC,L]
+RewriteRule ^ventas/comprobantes-electronicos/descargar/(.*)$ /libs/php/common/descargar-comprobante.php?path=$1 [QSA,NC,L]
+
+RewriteRule ^(.*)/(.*)/(.*)/(.*)/$ libs/php/common/$4.php?modulo=$2 [QSA,NC,L]
+RewriteRule ^cierre-de-turno/(.*)/(.*)/$ /frontends/cierre-de-turno/print-$1.php?id=$2 [QSA,NC,L]
+RewriteRule ^cierre-de-turno/procesar/$ libs/php/common/procesar.php [QSA,NC,L]
+RewriteRule ^compras/recibo/(.*)/$ /frontends/helpers/recibo-de-compra.php?id=$1 [QSA,NC,L]
+RewriteRule ^ventas/remito/(.*)/$ /frontends/helpers/remito.php?id=$1 [QSA,NC,L]
+RewriteRule ^articulos/remito/(.*)/$ /frontends/helpers/remito-stock.php?id=$1 [QSA,NC,L]
+RewriteRule ^ventas/impresion-comprobante/(.*)/$ /frontends/helpers/impresion-comprobante.php?id=$1 [QSA,NC,L]
+RewriteRule ^listados/(.*)/exportar/$ dashboard.php?parent=listados/$1&modulo=listados/exportar&segmento=$1 [QSA,NC,L]
+RewriteRule ^listados/(.*)/$ dashboard.php?modulo=listados/$1 [QSA,NC,L]
+
+
+RewriteRule ^(.*)/(.*)/(.*)/$ dashboard.php?modulo=$2&parent=$1&id=$3 [QSA,NC,L]
+
+RewriteRule ^cuentas-corrientes/procesar/$ libs/php/cuentas-corrientes/procesar.php [QSA,NC,L]
+RewriteRule ^cajas/(.*)/$ libs/php/cajas/$1.php [QSA,NC,L]
+RewriteRule ^(.*)/(.*)/$ libs/php/common/$2.php?modulo=$1 [QSA,NC,L]
+RewriteRule ^estado/$  dashboard.php [NC,L,QSA]
+RewriteRule ^iniciar-sesion/$  libs/php/session/login.php [NC,L]
+RewriteRule ^cerrar-sesion/$  libs/php/session/logout.php [NC,L]
+RewriteRule ^(.*)/$ dashboard.php?modulo=$1 [QSA,NC,L]
+
+<FilesMatch "\.(js|css|pdf)$">
+Header set Cache-Control "public"
+Header set Expires "Thu, 15 Apr 2000 20:00:00 GMT"
+</FilesMatch>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php72” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

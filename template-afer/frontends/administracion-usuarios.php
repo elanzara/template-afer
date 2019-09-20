@@ -5,7 +5,9 @@ $usuarios = DB::query("SELECT sys_usuarios.username,sys_usuarios.enabled, sys_us
 
 ?>
   <h1 class="page-header">Administración de usuarios
-
+<div class="pull-right">
+      <a class="btn btn-success" id="synch" role="button" href="/@sync/index.php"><i class="fa fa-plus"></i> Forzar Sync</a>
+</div>
 
   </h1>
 
